@@ -63,17 +63,11 @@
     </properties>
 
     <dependencies>
-        <!-- This project has no runtime dependencies -->
+        <!-- This project has no runtime dependencies only test dependencies -->
 
         <!-- Test dependencies -->
 
         <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -87,7 +81,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Eclipse JDT for code formatting -->
+        <!-- Eclipse JDT for code formatting tests -->
         <dependency>
             <groupId>org.eclipse.jdt</groupId>
             <artifactId>org.eclipse.jdt.core</artifactId>
@@ -130,6 +124,7 @@
         </resources>
 
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
