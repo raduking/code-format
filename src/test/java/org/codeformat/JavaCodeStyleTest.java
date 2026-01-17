@@ -1,10 +1,13 @@
+package org.codeformat;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -15,13 +18,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 /**
  * Test class for `java-code-style.xml`.
+ * <p>
+ * This class can be copied into other projects to validate that the Java code style formatter settings defined in the
+ * `java-code-style.xml` file are compatible with the Eclipse JDT formatter used in those projects providing the
+ * `code-format` module as a test dependency:
+ *
+ * <pre>
+ * &lt;dependency&gt;
+ *    &lt;groupId&gt;io.github.raduking&lt;/groupId&gt;
+ *    &lt;artifactId&gt;code-format&lt;/artifactId&gt;
+ *    &lt;version&gt;${code.format.version}&lt;/version&gt;
+ *    &lt;scope&gt;test&lt;/scope&gt;
+ * &lt;/dependency&gt;
+ * </pre>
  *
  * @author Radu Sebastian LAZIN
  */
@@ -29,12 +44,11 @@ class JavaCodeStyleTest {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(JavaCodeStyleTest.class);
 
-	private static final String FORMATTER_FILE_PATH = "src/main/resources/java-code-style.xml";
+	private static final String FORMATTER_FILE = "java-code-style.xml";
 
 	@Test
 	void shouldValidateFormatterFileWithProvidedJDT() throws IOException {
-		String currentDirectory = Paths.get(".").toAbsolutePath().normalize().toString();
-		String xml = Files.readString(Paths.get(currentDirectory, FORMATTER_FILE_PATH));
+		String xml = readString(FORMATTER_FILE);
 
 		Map<String, String> settings = getSettingsMap(xml);
 
@@ -51,6 +65,15 @@ class JavaCodeStyleTest {
 				LOGGER.info("Wrong/missing setting: '{}' : expected='{}' actual='{}'", key, expectedValue, actualValue);
 			}
 			assertThat("Setting '" + key + "' should match", actualValue, equalTo(expectedValue));
+		}
+	}
+
+	private static String readString(String formatterFile) throws IOException {
+		try (InputStream inputStream = JavaCodeStyleTest.class.getClassLoader().getResourceAsStream(formatterFile)) {
+			if (inputStream == null) {
+				throw new FileNotFoundException("File not found in classpath: " + formatterFile);
+			}
+			return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
 		}
 	}
 
@@ -82,5 +105,4 @@ class JavaCodeStyleTest {
 				});
 		return settings;
 	}
-
 }
