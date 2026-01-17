@@ -6,6 +6,10 @@ A collection of opinionated code formatting configurations for Java development 
 
 Current release `1.0.0`
 
+## Contents
+
+- `java-code-style.xml`: Eclipse formatter configuration file with the `modern-java` profile.
+
 ## Supported Tools
 
 - **Spotless**: A code formatting plugin for Gradle and Maven.
