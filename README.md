@@ -4,20 +4,40 @@ A collection of opinionated code formatting configurations for Java development 
 
 ## Releases
 
-Current release `1.0.24`
+Current release `1.0.0`
 
 ## Supported Tools
 
 - **Spotless**: A code formatting plugin for Gradle and Maven.
+- **Eclipse**: An integrated development environment widely used for Java development.
+- **IntelliJ IDEA**: A popular Java IDE with built-in code formatting capabilities.
+
+See below for installation instructions.
 
 ## Installation
 
 ### Direct File Usage
 ```bash
 # Download the Eclipse formatter configuration
-curl -o formatter.xml \
-  https://raw.githubusercontent.com/raduking/code-format/main/src/main/resources/java-code-style.xml
+curl -o java-code-style.xml \
+  https://raw.githubusercontent.com/raduking/code-format/refs/heads/master/src/main/resources/java-code-style.xml
 ```
+
+This file can be imported directly into Eclipse or IntelliJ IDEA.
+
+Eclipse:
+1. Go to `Settings` > `Java` > `Code Style` > `Formatter`.
+2. Click `Import...` and select the downloaded `java-code-style.xml` file.
+3. Select the imported profile: `modern-java`.
+3. Optionally, set it as the default formatter.
+4. Apply the changes.
+
+IntelliJ IDEA:
+1. Go to `Settings` > `Editor` > `Code Style` > `Java`.
+2. Click on the gear icon and select `Import Scheme` > `Eclipse XML Profile`.
+3. Select the downloaded `java-code-style.xml` file.
+4. Select the imported scheme `modern-java`.
+4. Apply the changes.
 
 ### Maven
 
