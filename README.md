@@ -2,6 +2,19 @@
 
 A collection of opinionated code formatting configurations for Java development tools.
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.raduking/code-format)](https://central.sonatype.com/artifact/io.github.raduking/code-format)
+[![GitHub Release](https://img.shields.io/github/v/release/raduking/code-format)](https://github.com/raduking/code-format/releases)
+[![License](https://img.shields.io/github/license/raduking/code-format)](https://opensource.org/license/apache-2-0)
+[![Java](https://img.shields.io/badge/Java-21+-blue)](https://www.oracle.com/java/technologies/downloads/#java21)
+[![PRs](https://img.shields.io/github/issues-pr/raduking/code-format)](https://github.com/raduking/code-format/pulls)
+
+#### Status
+
+[![branch: master](https://img.shields.io/badge/branch-master-blue)](https://github.com/raduking/code-format/tree/master)
+![Build (master)](https://github.com/raduking/code-format/actions/workflows/build.yml/badge.svg?branch=master)
+[![branch: develop](https://img.shields.io/badge/branch-develop-purple)](https://github.com/raduking/code-format/tree/develop)
+![Build (develop)](https://github.com/raduking/code-format/actions/workflows/build.yml/badge.svg?branch=develop)
+
 ## Releases
 
 Current release `1.0.0`
