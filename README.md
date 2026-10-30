@@ -17,7 +17,7 @@ A collection of opinionated code formatting configurations for Java development 
 
 ## Releases
 
-Current release `1.0.0`
+Current release `1.1.0`
 
 ## Contents
 
@@ -62,7 +62,7 @@ IntelliJ IDEA:
 <dependency>
     <groupId>io.github.raduking</groupId>
     <artifactId>code-format</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -70,10 +70,10 @@ IntelliJ IDEA:
 
 ```xml
 <properties>
-    <spotless.maven.plugin.version>3.1.0</spotless.maven.plugin.version>
-    <org.eclipse.jdt.core.version>3.44.0</org.eclipse.jdt.core.version>
+    <spotless.maven.plugin.version>3.10.4</spotless.maven.plugin.version>
+    <org.eclipse.jdt.core.version>3.47.0</org.eclipse.jdt.core.version>
     <eclipse.formatter.version>4.38</eclipse.formatter.version>
-    <code.format.version>1.0.0</code.format.version>
+    <code.format.version>1.1.0</code.format.version>
 </properties>
 
 <plugins>
