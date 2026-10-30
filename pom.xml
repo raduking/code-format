@@ -1,221 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <!--
+	<!--
         Using spring-boot-starter-parent to update dependencies easier and ensure that all dependencies work well together
         this parent having most of the commonly used dependencies defined with tested versions across Java projects.
     -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.2</version>
-        <relativePath />
-    </parent>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.1.2</version>
+		<relativePath />
+	</parent>
 
-    <groupId>io.github.raduking</groupId>
-    <artifactId>code-format</artifactId>
-    <version>1.1.0</version>
-    <packaging>jar</packaging>
+	<groupId>io.github.raduking</groupId>
+	<artifactId>code-format</artifactId>
+	<version>1.1.0</version>
+	<packaging>jar</packaging>
 
-    <name>${project.groupId}:${project.artifactId}</name>
-    <description>Code formatter files for Java projects</description>
-    <url>https://github.com/raduking/code-format</url>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>Code formatter files for Java projects</description>
+	<url>https://github.com/raduking/code-format</url>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
 
-    <developers>
-        <developer>
-            <id>raduking</id>
-            <name>Radu Sebastian LAZIN</name>
-            <email>raduking@gmail.com</email>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<id>raduking</id>
+			<name>Radu Sebastian LAZIN</name>
+			<email>raduking@gmail.com</email>
+		</developer>
+	</developers>
 
-    <scm>
-        <connection>scm:git:git://github.com/raduking/code-format.git</connection>
-        <developerConnection>scm:git:ssh://github.com:raduking/code-format.git</developerConnection>
-        <url>https://github.com/raduking/code-format/tree/master</url>
-    </scm>
+	<scm>
+		<connection>scm:git:git://github.com/raduking/code-format.git</connection>
+		<developerConnection>scm:git:ssh://github.com:raduking/code-format.git</developerConnection>
+		<url>https://github.com/raduking/code-format/tree/master</url>
+	</scm>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Publishing dependencies versions -->
-        <maven.gpg.plugin.version>3.2.8</maven.gpg.plugin.version>
+		<!-- Publishing dependencies versions -->
+		<maven.gpg.plugin.version>3.2.8</maven.gpg.plugin.version>
 		<central.publishing.maven.plugin.version>0.12.0</central.publishing.maven.plugin.version>
 
-        <!-- Test properties -->
-        <java.version>21</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+		<!-- Test properties -->
+		<java.version>21</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <!-- Test dependencies versions -->
-        <org.eclipse.jdt.core.version>3.47.0</org.eclipse.jdt.core.version>
-    </properties>
+		<!-- Test dependencies versions -->
+		<org.eclipse.jdt.core.version>3.47.0</org.eclipse.jdt.core.version>
+	</properties>
 
-    <dependencies>
-        <!-- This project has no runtime dependencies only test dependencies -->
+	<dependencies>
+		<!-- This project has no runtime dependencies only test dependencies -->
 
-        <!-- Test dependencies -->
+		<!-- Test dependencies -->
 
-        <!-- Logging -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<!-- Logging -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- JSON/XML -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<!-- JSON/XML -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- Eclipse JDT for code formatting tests -->
-        <dependency>
-            <groupId>org.eclipse.jdt</groupId>
-            <artifactId>org.eclipse.jdt.core</artifactId>
-            <version>${org.eclipse.jdt.core.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<!-- Eclipse JDT for code formatting tests -->
+		<dependency>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>org.eclipse.jdt.core</artifactId>
+			<version>${org.eclipse.jdt.core.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- Testing frameworks -->
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<!-- Testing frameworks -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-    </dependencies>
+	</dependencies>
 
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 
-        <plugins>
+		<plugins>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
 
-        </plugins>
-    </build>
+		</plugins>
+	</build>
 
-    <profiles>
-        <!--
+	<profiles>
+		<!--
             Release profile, activate it with: -Drelease=true
         -->
-        <profile>
-            <id>active-on-property-environment-release</id>
-            <activation>
-                <property>
-                    <name>release</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <!-- Artifact signing for publishing -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven.gpg.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <keyname>${env.MAVEN_GPG_PLUGIN_KEY}</keyname>
-                            <gpgArguments>
-                                <argument>--pinentry-mode</argument>
-                                <argument>loopback</argument>
-                            </gpgArguments>
-                        </configuration>
-                    </plugin>
+		<profile>
+			<id>active-on-property-environment-release</id>
+			<activation>
+				<property>
+					<name>release</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<!-- Artifact signing for publishing -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven.gpg.plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<keyname>${env.MAVEN_GPG_PLUGIN_KEY}</keyname>
+							<gpgArguments>
+								<argument>--pinentry-mode</argument>
+								<argument>loopback</argument>
+							</gpgArguments>
+						</configuration>
+					</plugin>
 
-                    <!-- Publish to Maven Central -->
-                    <!--
+					<!-- Publish to Maven Central -->
+					<!--
                         Releases: https://central.sonatype.org/publish/publish-portal-guide/
                         Snapshots: https://central.sonatype.org/publish/publish-portal-snapshots/
                     -->
-                    <plugin>
-                        <groupId>org.sonatype.central</groupId>
-                        <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>${central.publishing.maven.plugin.version}</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <autoPublish>true</autoPublish>
-                            <deploymentName>release-${project.artifactId}-${project.version}</deploymentName>
-                            <publishingServerId>central</publishingServerId>
-                        </configuration>
-                    </plugin>
+					<plugin>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>${central.publishing.maven.plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<autoPublish>true</autoPublish>
+							<deploymentName>release-${project.artifactId}-${project.version}</deploymentName>
+							<publishingServerId>central</publishingServerId>
+						</configuration>
+					</plugin>
 
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>central</id>
-            <name>Central Repository Snapshots</name>
-            <url>https://central.sonatype.com/repository/maven-snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </snapshotRepository>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>central</id>
+			<name>Central Repository Snapshots</name>
+			<url>https://central.sonatype.com/repository/maven-snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</snapshotRepository>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 </project>
 
